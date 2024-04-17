@@ -1,25 +1,22 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
-        int n, k;
+        int n, k, rst, cnt = 0;
         n = scan.nextInt();
         k = scan.nextInt();
 
-        ArrayList<Integer> divisor = new ArrayList<Integer>();
-
         for (int i=1; i<=n; i++){
             if (n%i==0) {
-                divisor.add(i);
-                if (divisor.size() == k) {
-                    System.out.println(divisor.get(k-1));
+                cnt ++;
+                if (cnt == k) {
+                    System.out.println(i);
                     break;
                 }
             }
         }
-        if (divisor.size() < k) {
+        if (cnt < k) {
             System.out.println(0);
         }
     }
